@@ -1,0 +1,99 @@
+* {
+  /* CSS boiler plate */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.navbar {
+  /* Making the navigation bar centered, making the color white (also see .navbar a, color is also being white) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #666;
+  color: white;
+}
+
+.navbar a {
+  color: white;
+}
+
+/* Adding this in Javascript, when we toggle the button, the navbar links will become active */
+.navbar-links.active {
+  display: flex;
+}
+
+.title {
+  /* Making title a bit bigger */
+  font-size: 1.5rem;
+  margin: 0.5rem;
+}
+
+.toggle-button {
+  /* Styling the toggle button */
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: none;
+  /* Want the flex direction to column so that the bars will lay out from top to bottom */
+  flex-direction: column;
+  /* Want the bars to be as far away as possible from each other in the container */
+  justify-content: space-between;
+  width: 31px;
+  height: 20px;
+}
+
+.bar {
+  /* Styling the seperate bars */
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.navbar-links {
+  /* Remove extra margin, padding */
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  /* Want to make the li's spaced out, do normal styling */
+  padding: 2rem;
+  list-style-type: none;
+  font-size: 1.2rem;
+  /* Make the li span 100% of the container on hover */
+  width: 100%;
+  text-align: center;
+}
+
+/* Adding an affect when the user hover overs the item */
+.navbar-links li:hover {
+  background-color: black;
+  transition: 0.3s ease-in-out;
+}
+
+/* Adding a media query to say when it gets to 500px screen width, the toggle button will show up, and the navbar links will disapear */
+@media screen and (max-width: 500px) {
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+    /* Want them to be in the middle, and make the navbar links from top to bottom */
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar {
+    /* Want the navbar to be in a column, top to bottom */
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
